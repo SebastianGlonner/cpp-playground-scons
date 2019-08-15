@@ -26,8 +26,8 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/MyGameDev/Godot/Games/Soulslism" />
-    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bin/test.exe" />
+    <property name="settings.editor.selected.configurable" value="CLionExternalConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -42,7 +42,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Custom Build Application.CatchTests">
-    <configuration name="CatchTests" type="CLionExternalRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PlaygroundScons" TARGET_NAME="SconsBuild" CONFIG_NAME="SconsBuild" RUN_PATH="$PROJECT_DIR$/test.exe">
+    <configuration name="CatchTests" type="CLionExternalRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PlaygroundScons" TARGET_NAME="SconsBuild" CONFIG_NAME="SconsBuild" RUN_PATH="$PROJECT_DIR$/bin/test.exe">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
@@ -108,7 +108,7 @@
       <workItem from="1565423098856" duration="2320000" />
       <workItem from="1565439432713" duration="6797000" />
       <workItem from="1565533293268" duration="1664000" />
-      <workItem from="1565848075424" duration="605000" />
+      <workItem from="1565848075424" duration="2171000" />
     </task>
     <servers />
   </component>

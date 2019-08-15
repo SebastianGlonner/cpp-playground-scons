@@ -1,10 +1,12 @@
 
-import os
+import os, sys
 
 def add_sources(env, sources, dir, extension):
     for f in os.listdir(dir):
         if f.endswith('.' + extension):
             sources.append(dir + '/' + f)
+
+outputPath = '#bin/'
 
 use_mingw = True;
 
@@ -16,33 +18,47 @@ if use_mingw:
 env = Environment(tools=custom_tools)
 env['target'] = 'debug'
 
+env['LIBSUFFIX'] = '_dll.a' # fix @see readme.md
+
 if use_mingw:
     env.Append(LINKFLAGS=['-static-libgcc', '-static-libstdc++'])
 
 env_test = env.Clone();
+
+#
+# Build sharedtest dynamic library
+#
 
 libSources = []
 add_sources(env, libSources, 'src', 'cpp')
 #add_sources(env, sources, 'tests', 'cpp')
 
 if (env["target"] == "debug"):
-    env.Append(CCFLAGS=['-g3', '-DDEBUG_ENABLED', '-DDEBUG_MEMORY_ENABLED'])
+    if use_mingw:
+        env.Append(CCFLAGS=['-g3', '-DDEBUG_ENABLED', '-DDEBUG_MEMORY_ENABLED'])
+    else:
+        sys.exit("ERROR: debug target for msvc implemented")
 
-env.Append(CCFLAGS=['-fPIC'])
-libTarget = '#bin/library-{}'.format(env['target'])
-# library = env.SharedLibrary(target=libTarget, source=libSources)
+if use_mingw:
+    env.Append(CCFLAGS=['-fPIC'])
+
+libTargetName = 'sharedtest-{}'.format(env['target'])
+library = env.SharedLibrary(target=outputPath+libTargetName, source=libSources)
+Default(library)
+
+#
+# Build catch unit test exe with library as dependency
+#
 
 env_test.Append(CPPPATH=[
     'vendor',
     'src'
 ])
 
-# env_test.Append(LIBS=[library])
-# env_test.Append(LIBS=[library])
-
 testSources = []
-add_sources(env_test, testSources, 'src', 'cpp')
 add_sources(env_test, testSources, 'tests', 'cpp')
 
-tests = env_test.Program(target='test', source=testSources)
+tests = env_test.Program(target='#bin/test', source=testSources
+    , LIBS=[libTargetName], LIBPATH=[outputPath]
+    )
 Default(tests)
