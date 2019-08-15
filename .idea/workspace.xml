@@ -19,7 +19,11 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1PDyjfRIVcEJaE05BBPS1Gdr4K4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="C:/MyGameDev/Godot/Games/Soulslism" />
@@ -104,7 +108,19 @@
       <workItem from="1565423098856" duration="2320000" />
       <workItem from="1565439432713" duration="6797000" />
       <workItem from="1565533293268" duration="1664000" />
+      <workItem from="1565848075424" duration="605000" />
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
