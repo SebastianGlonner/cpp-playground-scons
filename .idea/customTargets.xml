@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CLionExternalBuildManager">
+    <target id="75d83213-0690-419b-976b-cecab1f24452" name="SconsBuild" projectName="PlaygroundScons">
+      <configuration id="7b487606-7771-4c0d-8fa5-9fa5f5a60423" name="SconsBuild">
+        <build type="TOOL">
+          <tool actionId="Tool_External Tools_scons" />
+        </build>
+        <clean type="TOOL">
+          <tool actionId="Tool_External Tools_scons_clean" />
+        </clean>
+      </configuration>
+    </target>
+  </component>
+</project>
