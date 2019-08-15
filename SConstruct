@@ -8,7 +8,7 @@ def add_sources(env, sources, dir, extension):
 
 outputPath = '#bin/'
 
-use_mingw = True;
+use_mingw = False;
 
 custom_tools = ['default'];
 
@@ -18,9 +18,8 @@ if use_mingw:
 env = Environment(tools=custom_tools)
 env['target'] = 'debug'
 
-env['LIBSUFFIX'] = '_dll.a' # fix @see readme.md
-
 if use_mingw:
+    env['LIBSUFFIX'] = '_dll.a' # fix @see readme.md
     env.Append(LINKFLAGS=['-static-libgcc', '-static-libstdc++'])
 
 env_test = env.Clone();
@@ -36,8 +35,8 @@ add_sources(env, libSources, 'src', 'cpp')
 if (env["target"] == "debug"):
     if use_mingw:
         env.Append(CCFLAGS=['-g3', '-DDEBUG_ENABLED', '-DDEBUG_MEMORY_ENABLED'])
-    else:
-        sys.exit("ERROR: debug target for msvc implemented")
+    # else:
+    #     sys.exit("ERROR: debug target for msvc implemented")
 
 if use_mingw:
     env.Append(CCFLAGS=['-fPIC'])

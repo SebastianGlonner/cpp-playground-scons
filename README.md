@@ -16,6 +16,18 @@ Executable: The resulting exe? You need to execute scons once to be able to sele
 
 # gotchas
 
+## link program with dll on linux
+
+you have to export functions etc. in the .dll and also have to import these functions
+in the programm which is using the .dll:
+
+```
+__declspec(dllexport)
+__declspec(dllimport)
+```
+
+## mingw
+
 scons + mingw automatically compile a <lib>.dll and a lib<lib>.a file (i dont know why yet
 there are reasons but these are obsolete?) when compiling shared libraries.
 It is done the the command: -Wl,--out-implib,bin\sharedtest-debug.a
