@@ -38,3 +38,4 @@
 *.pdb
 
 # End of https://www.gitignore.io/api/c++
+/.sconsign.dblite
